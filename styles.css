@@ -16,5 +16,27 @@ h1 {
 }
 
 h1::after {
-    content:☝️;
+    content:"☝️";
 }
+
+.position-1 {
+    color:white;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+}
+
+.position-2 {
+   display:block;
+   
+}
+
+.player-info {
+    color:white;
+    
+
+}
+
+
+
