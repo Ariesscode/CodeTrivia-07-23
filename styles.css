@@ -67,6 +67,7 @@ h1::after {
     margin-left:10px;
     border-radius:10px;
     box-shadow: 0 0 10px 5px darkgrey;
+    
 
 }
 
@@ -77,5 +78,12 @@ h1::after {
 }
 
 
+.quiz-header {
+    display:flex;
+   flex-direction:column;
+   
+
+    
+}
 
 
