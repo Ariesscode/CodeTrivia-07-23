@@ -19,24 +19,34 @@ h1::after {
     content:"☝️";
 }
 
-.position-1 {
+.container-1 {
     color:white;
     display:flex;
     justify-content:center;
     align-items:center;
-
 }
 
-.position-2 {
-   display:block;
-   
-}
-
-.player-info {
-    color:white;
+.submit {
+    margin-top:5px;
+    width:20%;
+    border-color:white;
+    background-color:lightgray;
+    font-weight: bold;
+    border-radius: 5%;
     
-
 }
+
+.high-scores {
+    margin-top:5px;
+    width:20%;
+    background-color:lightgray;
+    font-weight:bold;
+    border-radius: 5%;
+    border-color:white;
+}
+
+
+
 
 
 
