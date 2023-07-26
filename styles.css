@@ -45,7 +45,26 @@ h1::after {
     border-color:white;
 }
 
+.position-1 {
+    background-color:black;
+    margin:20px;
+    display:flex;
+    justify-content:center;
+    position:relative;
+    top:20px;
+    padding-bottom:40px;
 
+}
+
+.trivia-container {
+    background-color: white;
+    width:400px;
+    height:800px;
+    border:10px solid blue;
+    margin-right:10px;
+    margin-left:10px;
+
+}
 
 
 
