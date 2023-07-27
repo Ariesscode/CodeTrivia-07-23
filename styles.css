@@ -157,6 +157,7 @@ h1::after {
 
 
 .complete-quiz-container {
+    display: none;
     background-color: white;
     width:800px;
     height:400px;
