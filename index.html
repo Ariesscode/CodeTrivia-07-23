@@ -22,9 +22,9 @@
         <section>
             <div class="position-2">
                 <div class="trivia-container">
-                    <div class="quiz-header">
-                        <h2 class="header">Challenge:</h2>
-                        <div class="challenge-rules">
+                    <div id="quizbox" class="quiz-header">
+                        <h2 id="quizheader" class="header">Challenge:</h2>
+                        <div id="quiz" class="challenge-rules">
                         <p>
                         How many questions can you answer correctly in 60 seconds?<br>
                         Each incorrect answer will subtract 10 seconds from the timer!<br>
@@ -43,6 +43,36 @@
                     </div>
             </div>
         </section>
+
+        <section>
+            <div class="questions-container">
+                <div class="timer">
+                    <div>Time Left: 60</div>
+                </div>
+                <div class="question">
+                    <!--questions display here-->
+                    <div class="choices">
+                        <button class="choice-A">The answer is A.</button>
+                        <button class="choice-B">The answer is B.</button>
+                        <button class="choice-C">The answer is C.</button>
+                        <button class="choice-D">The answer is D.</button>
+                    </div>
+
+                </div>
+            </div>
+            
+        </section>
+
+        <!--Quiz complete-->
+
+        <div class="quiz-complete-container">
+            <div class="score">
+                <!--score shows here-->
+            </div>
+            
+            <button class="restart">Exit</button>
+        </div>
+
     
 <script src="script.js"></script>
     
