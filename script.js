@@ -19,6 +19,6 @@ function showName(event) {
     //add event listener to the start button and a function
     //a function to make everything on screen clear for quiz
     
-    
+  availableQuestions = [""]
 
     
