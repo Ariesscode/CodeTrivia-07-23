@@ -154,3 +154,24 @@ h1::after {
     margin-top:40px;
 
 }
+
+
+.complete-quiz-container {
+    background-color: white;
+    width:800px;
+    height:400px;
+    border:10px solid black;
+    margin-right:10px;
+    margin-left:10px;
+    border-radius:10px;
+    box-shadow: 0 0 10px 5px darkgrey;
+    position: absolute;
+    bottom:50%;
+    left:20%;
+}
+
+
+    
+
+}
+
