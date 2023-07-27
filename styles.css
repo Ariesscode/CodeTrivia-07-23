@@ -128,4 +128,22 @@ h1::after {
 .timer {
     float:right;
     padding:20px;
+    font-size:20px;
+    font-weight: bold;
 }
+
+.choices-container {
+    display:flex;
+    flex-direction:column;
+    
+    width:50%;
+    padding-top:20%;
+}
+
+.choice {
+    display:flex;
+    padding-bottom:10px;
+    margin:5px;
+    padding-top:10px;
+}
+
