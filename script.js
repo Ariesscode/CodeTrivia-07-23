@@ -35,36 +35,44 @@ var showQuestions = document.querySelector('.rules');
 
 
 
-
-
-
-
-
-
-
+var questionContainer = document.getElementById("ruless")
+var showQuestion = document.getElementById("questions");
+var timer = document.getElementById("time");
+let timeLeft = 60
 var questionLength = 5;
 var questionIndex = 0;
-var questionContainer = document.getElementById("ruless")
 
 var quizQuestions = () =>{
     questText.style.display = "none";
     strtbutton.style.display = "none";
     console.log(showQuestions);
+    startTimer();
 }
 
+
+var startTimer = () => {
+    var countDown = ()=>{
+        timeLeft--;
+        timer.textContent = "Time: " + timeLeft;
+    }
+    setInterval(countDown, 1000);
+    
+}
 
        
 strtbutton.addEventListener('click', ()=>{
 quizQuestions();
-var showQuestions = quiz[questionIndex];
+
+showQuestion.innerHTML = quiz[currentQuestionIndex];
 })
 
-    
 
 
 
 
-    
+
+
+        
 
 
 
