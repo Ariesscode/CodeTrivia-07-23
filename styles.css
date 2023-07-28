@@ -42,3 +42,35 @@ body {
     color:green;
     font-weight:bold;
 }
+
+.complete {
+    float:right;
+    position:relative;
+    top:200px;
+    right:60px;
+    
+}
+
+.restart {
+    width:80px;
+    height:30px;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+.exit-game {
+    width:80px;
+    height:30px;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+.start {
+    width:100px;
+    height:30px;
+    border-radius: 5px;
+    background-color:hotpink;
+    border-color:white;
+    font-weight: bold;
+    margin-left:20px;
+}
