@@ -65,14 +65,15 @@ function setTime() {
 }
 
 function renderQuestions() {
- console.log(showQuestion);
- console.log(quiz[currentQuestionIndex]);
+ 
 }
 
 
        
 strtbutton.addEventListener('click', ()=>{
 quizQuestions();
+console.log(showQuestion);
+console.log(quiz[currentQuestionIndex]);
 
 })
 
