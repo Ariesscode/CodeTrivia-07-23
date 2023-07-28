@@ -40,23 +40,32 @@ var showQuestion = document.getElementById("questions");
 var timer = document.getElementById("time");
 let timeLeft = 60
 var questionLength = 5;
-var questionIndex = 0;
+var questionIndex = [""];
 
 var quizQuestions = () =>{
     questText.style.display = "none";
     strtbutton.style.display = "none";
     console.log(showQuestions);
-    startTimer();
+    setTime();
 }
 
 
-var startTimer = () => {
-    var countDown = ()=>{
+function setTime() {
+    var timerInterval = setInterval(function() {
         timeLeft--;
         timer.textContent = "Time: " + timeLeft;
-    }
-    setInterval(countDown, 1000);
+      if(timeLeft === 0) {
+        clearInterval(timerInterval);
+        timer.style.display ="none";
+        alert("TIMES UP!");
+}
     
+ }, 1000);
+    
+}
+
+function renderQuestions() {
+    showQuestions.innerHTML = 
 }
 
        
