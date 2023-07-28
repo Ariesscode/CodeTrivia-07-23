@@ -40,7 +40,7 @@ var showQuestion = document.getElementById("questions");
 var timer = document.getElementById("time");
 let timeLeft = 60
 var questionLength = 5;
-var questionIndex = [""];
+var questionIndex = 0;
 
 var quizQuestions = () =>{
     questText.style.display = "none";
@@ -65,7 +65,8 @@ function setTime() {
 }
 
 function renderQuestions() {
-    showQuestions.innerHTML =
+    showQuestion.innerHTML = quiz[questionIndex].Question
+    questionIndex++;
     console.log(showQuestion);
     console.log(quiz[currentQuestionIndex]);
    
