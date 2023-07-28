@@ -1,5 +1,6 @@
 var strtbutton = document.querySelector('.start');
 var questText = document.querySelector('#ruless');
+var showQuestions = document.querySelector('.rules');
 
 
     var quiz = [
@@ -43,20 +44,22 @@ var questText = document.querySelector('#ruless');
 
 var questionLength = 5;
 var questionIndex = 0;
+var questionContainer = document.getElementById("ruless")
 
 var quizQuestions = () =>{
     questText.style.display = "none";
-    var showQuestions = quiz[questionIndex];
-    
-
+    strtbutton.style.display = "none";
     console.log(showQuestions);
 }
 
 
        
-strtbutton.addEventListener('click', quizQuestions);
-    
+strtbutton.addEventListener('click', ()=>{
+quizQuestions();
+var showQuestions = quiz[questionIndex];
+})
 
+    
 
 
 
