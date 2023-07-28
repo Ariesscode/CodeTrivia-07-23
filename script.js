@@ -65,6 +65,10 @@ function setTime() {
 }
 
 function renderQuestions() {
+    showQuestions.innerHTML =
+    console.log(showQuestion);
+    console.log(quiz[currentQuestionIndex]);
+   
  
 }
 
@@ -72,8 +76,9 @@ function renderQuestions() {
        
 strtbutton.addEventListener('click', ()=>{
 quizQuestions();
-console.log(showQuestion);
-console.log(quiz[currentQuestionIndex]);
+renderQuestions();
+
+
 
 })
 
