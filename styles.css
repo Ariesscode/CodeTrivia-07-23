@@ -61,7 +61,7 @@ h1::after {
 }
 
 .trivia-container {
-    display:none;
+    
     background-color: white;
     width:800px;
     height:400px;
@@ -114,7 +114,7 @@ h1::after {
 }
 
 .questions-container {
-    
+    display:none;
     background-color: white;
     width:800px;
     height:400px;

@@ -1,9 +1,10 @@
 var playerBttn = document.getElementById("userbttn");
 var playerName = document.getElementById("player-name");
-
-var timeLeft = document.createElement("h1");
-timeLeft.innerText = 60;
-
+var startBtton = document.getElementById("start-button");
+var timeLeft = document.getElementById("time");
+var questionCount = document.getElementsByClassName(".question-count");
+var questionContainer = document.getElementById("questions");
+var choiceOptions = document.getElementsByClassName("choice");
 //Creating function to gather player name
 //Eventlistener added to trigger function
 
@@ -48,6 +49,8 @@ function showName(event) {
             }
 
         ];
+
+
 
 
 
