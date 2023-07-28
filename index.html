@@ -7,81 +7,31 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <section class="position-1">
-        <div class="container-1">
-            <div>
-                <h1>CodeTrivia</h1>
-                <p>Player Name :</p>
-                <input id="player-name" type="text" name="first-name"
-                    placeholder="Enter player name">
-                <button id="userbttn">Submit</button>
-                <button id="highscores">High Scores</button>
+    <div id="header" class="quiz-header">
+        
+        <h1>CodeTrivia</h1>
+        <div id="timeleft" class="timer"><span>Time: 60</span></div>
+        <div id="questions" class="question"></div>
+        <div id="choices" class="choice"></div>
+        <ol>
+            <li>How many questions can you answer correctly in 60 seconds?<br></li>
+            <li>Each incorrect answer will subtract 10 seconds from the timer!<br></li>
+            <li>You have 60 seconds for each question.<br></li>
+            <li>Are you sure your ready to put your knowledge to the test?<br></li>
+            <li>If you get all 5 questions correct, you will be added to the High Scores list!<br></li>
+            <p>You got this!</p>
+        </ol>
+        <button id="startbutton" class="start">Start</button>
+        <div id="quiz-complete" class="complete">
+            <button id="restart" class="restart">Restart</button>
+            <button id="exit" class="exit-game">Exit</button>
         </div>
-        </section>
 
-        <section>
-            <div class="position-2">
-                <div class="trivia-container">
-                    <div id="quizbox" class="quiz-header">
-                        <h2 id="quizheader" class="header">Challenge:</h2>
-                        <div id="quiz" class="challenge-rules">
-                        <p>
-                        How many questions can you answer correctly in 60 seconds?<br>
-                        Each incorrect answer will subtract 10 seconds from the timer!<br>
-                        You have 60 seconds for each question.<br>
-                        Are you sure your ready to put your knowledge to the test?<br>
-                        If you get all 5 questions correct, you will be added to the High Scores list!<br>
-                        You got this!
-                        </p>
-                    </div>
-                    </div>
-                
-                   <div class="start-bttn" >
-                    <!--javascript will show hidden elements when start function is invoked-->
-                    <button id="start-button">Start</button>
-                   </div>
-                     
-                    </div>
-            </div>
-        </section>
+    </div>
 
-        <section>
-            <div class="questions-container">
-                <div class="timer">
-                    <!--Javascript timer count down-->
-                    <p id="time">Time Left: 60</p>
-                </div>
-                <div id="question-number" class="question-count"><span>Question 1 of 5</span></div>
-                    <div class="quest">
-                       <p id="questions"> Question</p>
-                             
-                        <button id="choice-A" class="choice">Choice</button>
-                        <button id="choice-B" class="choice">Choice</button>
-                        <button id="choice-C" class="choice">Choice</button>
-                        <button id="choice-D" class="choice">Choice</button>
-                    </div>
-                    
-            </div>
-            
-        </section>
+      
 
-        <!--Quiz complete-->
-        <!--Javascript show score and if user decide to restart the game or quit-->
-        <section>
-            <div class="complete-quiz-container">
-                <div class="quizscore">
-                    <p>Your Score is:</p>
-                    <p>Thanks for playing CodeTrivia!</p>
-                </div>
-                <div class="last-buttons">
-                <button id="restart" class="start-over">Restart</button>
-                <button id="exit-bttn" class="quit-game">Exit</button>
-                </div>
-            </div>
-            
-            
-        </section>
-
+      
     
 <script src="script.js"></script>
     

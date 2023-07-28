@@ -1,26 +1,13 @@
-var playerBttn = document.getElementById("userbttn");
-var playerName = document.getElementById("player-name");
-var startBtton = document.getElementById("start-button");
-var timeLeft = document.getElementById("time");
-var questionCount = document.getElementsByClassName(".question-count");
-var questionContainer = document.getElementById("questions");
-var choiceOptions = document.getElementsByClassName("choice");
+let playerBttn = document.getElementById("userbttn");
+let playerName = document.getElementById("player-name");
+
+
+
 //Creating function to gather player name
 //Eventlistener added to trigger function
 
-playerBttn.addEventListener("click",showName);
-function showName(event) {
-    event.preventDefault();
-    console.log(playerName.value); //I want to see the name value of player when submitted
-    playerName.value = "";         //After player submits name, it will reset the placeholder
-    
-    }
 
-
-    //add event listener to the start button and a function
-    //a function to make everything on screen clear for quiz
-    
-  var quiz = [
+    let quiz = [
             { Question: "The condition in an if/else statement is enclosed with ____",
               Choices: ["quotes", "curly brackets", "paranthesis", "square brackets"],
               Answer: "paranthesis"
@@ -50,8 +37,26 @@ function showName(event) {
 
         ];
 
+        playerBttn.addEventListener("click",showName);
+        function showName(event) {
+        event.preventDefault();
+        console.log(playerName.value); //I want to see the name value of player when submitted
+        playerName.value = ""; }        //After player submits name, it will reset the placeholder
+        
+        
+        document.getElementById("start-button").addEventListener("click", startQuiz);
+        function startQuiz () {
+            document.getElementByClass("trivia-container").style.display = "none";
+        }
+        
 
 
+
+   
+
+    
+
+   
 
 
 
