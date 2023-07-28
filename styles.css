@@ -31,6 +31,7 @@ body {
 }
 
 .quiz-header li {
+  
     font-size:20px;
     position:relative;
     left:40px;
@@ -73,4 +74,9 @@ body {
     border-color:white;
     font-weight: bold;
     margin-left:20px;
+}
+
+.quiz-header ol {
+    display:block;
+    
 }
