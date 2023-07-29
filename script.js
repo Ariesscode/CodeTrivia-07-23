@@ -76,7 +76,7 @@ function setTime() {
 function renderQuestions() {
     showQuestion.innerHTML = quiz[questionIndex].Question
     questionIndex++;
-    showChoices.innerHTML = quiz[choiceIndex].Choices
+    showChoices.innerHTML = quiz[questionIndex].Choices 
     for (var i = 0; i < Choices.length; i++) {
        {
 
