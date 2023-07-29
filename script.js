@@ -98,6 +98,8 @@ function renderQuestions() {
       bttn.style.top = "50px";
       bttn.style.right = "20px";
       
+      var btn = bttn.classList;
+      btn.add("myStyle")
       
     }
 
