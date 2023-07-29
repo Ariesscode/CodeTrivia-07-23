@@ -78,24 +78,31 @@ function renderQuestions() {
     showQuestion.innerHTML = quiz[questionIndex].Question
     questionIndex++;
 
-  
-    
-    
     for (var i = 0; i < quiz[questionIndex].Choices.length; i++) {
       console.log(choiceIndex[i]);
       
        var bttn = document.createElement("button");
       bttn.innerHTML = quiz[questionIndex].Choices[i];
       showChoices.appendChild(bttn);
+      bttn.style.width = "250px";
+      bttn.style.backgroundColor = "white";
+      bttn.style.fontWeight = "bold";
+      bttn.style.borderRadius = "4px";
+      bttn.style.cursor = "pointer";
+      bttn.style.display = "block";
+      bttn.style.margin = "5px";
+      bttn.style.marginTop = "10px";
+      bttn.style.paddingTop = "5px";
+      bttn.style.paddingBottom = "5px";
+      bttn.style.position = "relative";
+      bttn.style.top = "50px";
+      bttn.style.right = "20px";
+      
+      
     }
 
   }
  
-  
-
-
-  
-
 strtbutton.addEventListener('click', ()=>{
 quizQuestions();
 renderQuestions();

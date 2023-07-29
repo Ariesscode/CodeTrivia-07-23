@@ -93,16 +93,9 @@ body {
     
 }
 
-.btn {
-    width:200px;
-    display:flex;
-    margin:5px;
-    font-weight:bold;
-    border-radius:4px;
-    height:30px;
-    justify-content: center;
+.question {
+    padding-top: 30px;
+    padding-left:20px;
 }
 
-.btn:hover {
-    background-color: greenyellow;
-}
+
