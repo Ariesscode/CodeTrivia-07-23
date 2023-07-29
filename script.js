@@ -7,12 +7,11 @@ var showQuestions = document.querySelector('.rules');
     var quiz = [
             { Question: "The condition in an if/else statement is enclosed with ____",
               Choices: [
-                 {text: "quotes", correct: false},
-                 {text: "curly brackets", correct: false},
-                 {text: "paranthesis", correct: true},
-                 {text: "square brackets", correct: false},
+                { text: "quotes", correct: false},
+                { text: "curly brackets", correct: false},
+                { text: "paranthesis", correct: true},
+                { text: "square brackets", correct: false},
               ]
-            
 
             },
 
@@ -51,9 +50,11 @@ var questionIndex = 0;
 var choiceIndex = 0;
 var choiceLength = 5;
 
+
 var quizQuestions = () =>{
     questText.style.display = "none";
     strtbutton.style.display = "none";
+    
     console.log(showQuestions);
     setTime();
 }
@@ -76,33 +77,28 @@ function setTime() {
 function renderQuestions() {
     showQuestion.innerHTML = quiz[questionIndex].Question
     questionIndex++;
-    showChoices.innerHTML = quiz[questionIndex].Choices 
-    for (var i = 0; i < Choices.length; i++) {
-       {
 
-      }
-        console.log(quiz[i]); 
-        var choiceBtton = document.createElement("button");
-       choiceBtton.innerHTML = quiz[choiceIndex].Choices;
+  
+    
+    
+    for (var i = 0; i < quiz[questionIndex].Choices.length; i++) {
+      console.log(choiceIndex[i]);
       
-       
-       
-        
+       var bttn = document.createElement("button");
+      bttn.innerHTML = quiz[questionIndex].Choices[i];
+      showChoices.appendChild(bttn);
     }
-   
+
+  }
  
-}
+  
 
 
+  
 
-       
 strtbutton.addEventListener('click', ()=>{
 quizQuestions();
 renderQuestions();
-
-
-
-
 })
 
 

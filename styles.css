@@ -86,3 +86,23 @@ body {
     display:block;
     
 }
+
+.choice {
+   
+    padding-left:40px;
+    
+}
+
+.btn {
+    width:200px;
+    display:flex;
+    margin:5px;
+    font-weight:bold;
+    border-radius:4px;
+    height:30px;
+    justify-content: center;
+}
+
+.btn:hover {
+    background-color: greenyellow;
+}
