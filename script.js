@@ -3,10 +3,16 @@ var questText = document.querySelector('#ruless');
 var showQuestions = document.querySelector('.rules');
 
 
+
     var quiz = [
             { Question: "The condition in an if/else statement is enclosed with ____",
-              Choices: ["quotes", "curly brackets", "paranthesis", "square brackets"],
-              Answer: "paranthesis"
+              Choices: [
+                 {text: "quotes", correct: false},
+                 {text: "curly brackets", correct: false},
+                 {text: "paranthesis", correct: true},
+                 {text: "square brackets", correct: false},
+              ]
+            
 
             },
 
@@ -17,7 +23,7 @@ var showQuestions = document.querySelector('.rules');
             },
 
             { Question: "A very useful tool used during development and debugging for printing content to the debugger is:",
-              Choices: ["JavaScript", "terminal/bash", "for loops", "console.log"],
+              Choices: ["javaScript", "terminal/bash", "for loops", "console.log"],
               Answer: "console.log"
 
 
@@ -26,7 +32,7 @@ var showQuestions = document.querySelector('.rules');
 
             { Question: "Commonly used data types Do NOT include:",
               Choices: ["strings", "booleans", "alerts", "numbers"],
-              Answer:"alerts"
+              Answer: "alerts"
 
 
             }
@@ -38,9 +44,12 @@ var showQuestions = document.querySelector('.rules');
 var questionContainer = document.getElementById("ruless")
 var showQuestion = document.getElementById("questions");
 var timer = document.getElementById("time");
+var showChoices = document.getElementById("choices");
 let timeLeft = 60
 var questionLength = 5;
 var questionIndex = 0;
+var choiceIndex = 0;
+var choiceLength = 5;
 
 var quizQuestions = () =>{
     questText.style.display = "none";
@@ -67,17 +76,30 @@ function setTime() {
 function renderQuestions() {
     showQuestion.innerHTML = quiz[questionIndex].Question
     questionIndex++;
-    console.log(showQuestion);
-    console.log(quiz[currentQuestionIndex]);
+    showChoices.innerHTML = quiz[choiceIndex].Choices
+    for (var i = 0; i < Choices.length; i++) {
+       {
+
+      }
+        console.log(quiz[i]); 
+        var choiceBtton = document.createElement("button");
+       choiceBtton.innerHTML = quiz[choiceIndex].Choices;
+      
+       
+       
+        
+    }
    
  
 }
+
 
 
        
 strtbutton.addEventListener('click', ()=>{
 quizQuestions();
 renderQuestions();
+
 
 
 
