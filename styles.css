@@ -97,3 +97,28 @@ body {
     padding-top: 30px;
     padding-left:20px;
 }
+
+
+.custom-button {
+    display:block;
+    width:250px;
+    background-color: white;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 4px;
+    margin: 5px;
+    margin-top: 10px;
+    padding-top:5px;
+    padding-bottom: 5px;
+    position: relative;
+    top:50px;
+    right:20px;
+    font-size: 20px;
+
+   
+}
+
+.custom-button:hover {
+    background-color:blue;
+    color:white;
+}

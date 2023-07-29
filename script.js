@@ -84,6 +84,7 @@ function renderQuestions() {
        var bttn = document.createElement("button");
       bttn.innerHTML = quiz[questionIndex].Choices[i];
       showChoices.appendChild(bttn);
+      /*
       bttn.style.width = "250px";
       bttn.style.backgroundColor = "white";
       bttn.style.fontWeight = "bold";
@@ -97,9 +98,8 @@ function renderQuestions() {
       bttn.style.position = "relative";
       bttn.style.top = "50px";
       bttn.style.right = "20px";
-      
-      var btn = bttn.classList;
-      btn.add("myStyle")
+      */
+      bttn.classList.add('custom-button');
       
     }
 
