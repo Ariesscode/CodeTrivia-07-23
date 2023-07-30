@@ -97,11 +97,26 @@ document.addEventListener("click", (e) => {
     userAnswer = e.target.textContent; //the inner text of the buttons created should match the inner text of answer in array created
 
     if (userAnswer === correctAnswer) { //message will appear to user if selected wrong or correct answer
-      messageEl.innerText = "good job!";
+      messageEl.innerText = "Correct! Good job";
+      messageEl.style.color = "white";
+      messageEl.style.paddingLeft = "20px";
+      messageEl.style.backgroundColor = "green";
+      messageEl.style.height = "30px";
+      messageEl.style.width = "500px";
+      messageEl.style.paddingTop = "2px";
+      messageEl.style.fontWeight = "bolder";
+      
   }
 
     else {
-      messageEl.innerText = "Wrong!";
+      messageEl.innerText = "Wrong, Try Again!";
+      messageEl.style.color = "white";
+      messageEl.style.paddingLeft = "20px";
+      messageEl.style.backgroundColor = "red";
+      messageEl.style.height = "30px";
+      messageEl.style.width = "500px";
+      messageEl.style.paddingTop = "2px";
+      messageEl.style.fontWeight = "bold";
       timeLeft -= 10;//time is subtracted by 10 seconds if selected wrong answer
     }
     questionIndex++;
