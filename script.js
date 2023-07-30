@@ -4,37 +4,41 @@ var showQuestions = document.querySelector('.rules');
 
 
 
-    var quiz = [
-            { Question: "The condition in an if/else statement is enclosed with ____",
-              Choices: ["quotes", "curly brackets", "paranthesis", "square brackets"],
-              Answer: "paranthesis"
-             
-              
-
-            },
-
-            { Question: "String values must be enclosed within ____ when being assigned to variables.",
-              Choices: ["commas", "curly brackets", "quotes", "paranthesis"],
-              Answer: "quotes"
-
-            },
-
-            { Question: "A very useful tool used during development and debugging for printing content to the debugger is:",
-              Choices: ["javaScript", "terminal/bash", "for loops", "console.log"],
-              Answer: "console.log"
+var quiz = [
+  {
+    Question: "The condition in an if/else statement is enclosed with ____",
+    Choices: ["quotes", "curly brackets", "paranthesis", "square brackets"],
+    Answer: "paranthesis"
 
 
-            },
+
+  },
+
+  {
+    Question: "String values must be enclosed within ____ when being assigned to variables.",
+    Choices: ["commas", "curly brackets", "quotes", "paranthesis"],
+    Answer: "quotes"
+
+  },
+
+  {
+    Question: "A very useful tool used during development and debugging for printing content to the debugger is:",
+    Choices: ["javaScript", "terminal/bash", "for loops", "console.log"],
+    Answer: "console.log"
 
 
-            { Question: "Commonly used data types Do NOT include:",
-              Choices: ["strings", "booleans", "alerts", "numbers"],
-              Answer: "alerts"
+  },
 
 
-            }
+  {
+    Question: "Commonly used data types Do NOT include:",
+    Choices: ["strings", "booleans", "alerts", "numbers"],
+    Answer: "alerts"
 
-        ];
+
+  }
+
+];
 
 
 
@@ -55,71 +59,71 @@ var messageEl = document.getElementById("message");
 
 
 function setTime() {
-    var timerInterval = setInterval(function() {
-        timeLeft--;
-        timer.textContent = "Time: " + timeLeft;
-      if(timeLeft === 0) {
-        clearInterval(timerInterval);
-        timer.style.display ="none";
-        alert("TIMES UP!");
-}
-    
- }, 1000);
-    
+  var timerInterval = setInterval(function () {
+    timeLeft--;
+    timer.textContent = "Time: " + timeLeft;
+    if (timeLeft === 0) {
+      clearInterval(timerInterval);
+      timer.style.display = "block";
+      alert("TIMES UP!");
+    }
+
+  }, 1000);
+
 }
 
 function renderQuestions() {
-    showQuestion.textContent = quiz[questionIndex].Question
-    correctAnswer = quiz[questionIndex].Answer
-   
+  showQuestion.textContent = quiz[questionIndex].Question
+  correctAnswer = quiz[questionIndex].Answer
+
   showChoices.innerHTML = "";
-    for (var i = 0; i < quiz[questionIndex].Choices.length; i++) {
-      console.log(choiceIndex[i]);
-      
-       let bttn = document.createElement("button");
-      bttn.textContent = quiz[questionIndex].Choices[i];
-      showChoices.appendChild(bttn);
-      bttn.classList.add('custom-button');
-       // I want the new buttons created to show in html
-     }
+  for (var i = 0; i < quiz[questionIndex].Choices.length; i++) {
+    console.log(choiceIndex[i]);
 
-     
-  }
-  
-  document.addEventListener("click", (e)=>{
-e.preventDefault() 
-if(e.target && e.target.matches(".custom-button")) {
-  userAnswer = e.target.textContent;
-
-  if(userAnswer === correctAnswer) {
-    messageEl.innerText = "good job!";
-
-
-  
+    let bttn = document.createElement("button");
+    bttn.textContent = quiz[questionIndex].Choices[i];
+    showChoices.appendChild(bttn);
+    bttn.classList.add('custom-button');
+    // I want the new buttons created to show in html
   }
 
-  else {
-    messageEl.innerText = "Wrong!";
-    timeLeft-=10;
-  }
-  questionIndex++;
-  renderQuestions();
+
 }
 
-  })
+document.addEventListener("click", (e) => {
+  e.preventDefault()
+  if (e.target && e.target.matches(".custom-button")) {
+    userAnswer = e.target.textContent;
+
+    if (userAnswer === correctAnswer) {
+      messageEl.innerText = "good job!";
 
 
- 
 
- 
+    }
+
+    else {
+      messageEl.innerText = "Wrong!";
+      timeLeft -= 10;
+    }
+    questionIndex++;
+    renderQuestions();
+  }
+
+})
 
 
-strtbutton.addEventListener('click', ()=>{
+
+
+
+
+
+strtbutton.addEventListener('click', () => {
   questText.style.display = "none";
-    strtbutton.style.display = "none";
-    console.log(showQuestions);
-    setTime(); 
-
+  strtbutton.style.display = "none";
+  timer.style.display = "block"
+  console.log(showQuestions);
+  setTime();
   renderQuestions();
 })
 
@@ -130,19 +134,18 @@ strtbutton.addEventListener('click', ()=>{
 
 
 
-        
 
 
 
-   
-
-    
-
-   
 
 
 
-  
-  
 
-    
+
+
+
+
+
+
+
+
