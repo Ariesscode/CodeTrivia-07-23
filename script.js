@@ -47,15 +47,11 @@ var questionLength = 5;
 var questionIndex = 0;
 var choiceIndex = 0;
 var choiceLength = 5;
+var correctAnswer = "";
+var userAnswer = "";
+var messageEl = document.getElementById("message");
 
 
-var quizQuestions = () =>{
-    questText.style.display = "none";
-    strtbutton.style.display = "none";
-    
-    console.log(showQuestions);
-    setTime();
-}
 
 
 function setTime() {
@@ -73,39 +69,60 @@ function setTime() {
 }
 
 function renderQuestions() {
-    showQuestion.innerHTML = quiz[questionIndex].Question
-    questionIndex++;
-
+    showQuestion.textContent = quiz[questionIndex].Question
+    correctAnswer = quiz[questionIndex].Answer
+   
+  showChoices.innerHTML = "";
     for (var i = 0; i < quiz[questionIndex].Choices.length; i++) {
       console.log(choiceIndex[i]);
       
-       var bttn = document.createElement("button");
-      bttn.innerHTML = quiz[questionIndex].Choices[i];
+       let bttn = document.createElement("button");
+      bttn.textContent = quiz[questionIndex].Choices[i];
       showChoices.appendChild(bttn);
       bttn.classList.add('custom-button');
+       // I want the new buttons created to show in html
+     }
 
-      if(quiz[questionIndex].Answer.selected = quiz[questionIndex].Answer) {
-        alert("good job!");
-      }
-      bttn.addEventListener('click', selectAnswer)
-      
-      
- }
+     
+  }
+  
+  document.addEventListener("click", (e)=>{
+e.preventDefault() 
+if(e.target && e.target.matches(".custom-button")) {
+  userAnswer = e.target.textContent;
+
+  if(userAnswer === correctAnswer) {
+    messageEl.innerText = "good job!";
 
 
- }
+  
+  }
 
-function selectAnswer(e) {
-  var selectdBttn = e.target;
-
+  else {
+    messageEl.innerText = "Wrong!";
+    timeLeft-=10;
+  }
+  questionIndex++;
+  renderQuestions();
 }
+
+  })
+
+
+ 
+
  
 
 
 strtbutton.addEventListener('click', ()=>{
-quizQuestions();
-renderQuestions();
+  questText.style.display = "none";
+    strtbutton.style.display = "none";
+    console.log(showQuestions);
+    setTime(); 
+
+  renderQuestions();
 })
+
 
 
 

@@ -1,43 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CodeTrivia</title>
     <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
     <div id="header" class="quiz-header">
-        
+
         <h1>CodeTrivia</h1>
-        <div id="timeleft" class="timer"><span id="time">Time: 60</span></div>
-        <div id="questions" class="question"></div>
-        <div id="choices" class="choice"></div>
+    
 
         <div id="ruless">
             <ol id="rules">
-            <li>How many questions can you answer correctly in 60 seconds?<br></li>
-            <li>Each incorrect answer will subtract 10 seconds from the timer!<br></li>
-            <li>You have 60 seconds for each question.<br></li>
-            <li>Are you sure your ready to put your knowledge to the test?<br></li>
-            <li>If you get all 5 questions correct, you will be added to the High Scores list!<br></li>
-            <p>You got this!</p>
+                <li>How many questions can you answer correctly in 60 seconds?<br></li>
+                <li>Each incorrect answer will subtract 10 seconds from the timer!<br></li>
+                <li>You have 60 seconds for each question.<br></li>
+                <li>Are you sure your ready to put your knowledge to the test?<br></li>
+                <li>If you get all 5 questions correct, you will be added to the High Scores list!<br></li>
+                <p>You got this!</p>
             </ol>
         </div>
         <button id="startbutton" class="start">Start</button>
-        <div id="quiz-complete" class="complete">
-            <button id="restart" class="restart">Restart</button>
-            <button id="exit" class="exit-game">Exit</button>
-        </div>
+    </div>
+    <div id="gameScreen">
+        <div id="timeleft" class="timer"><span id="time">Time: 60</span></div>
+        <div id="questions" class="question"></div>
+        <div id="choices" class="choice"></div>
+        <div id="message"></div>
+    </div>
+    <div id="quiz-complete" class="complete">
+        <button id="restart" class="restart">Restart</button>
+        <button id="exit" class="exit-game">Exit</button>
+    </div>
 
     </div>
 
-      
 
-      
-    
-<script src="script.js"></script>
-    
-    
+
+
+
+    <script src="script.js"></script>
+
+
 </body>
+
 </html>

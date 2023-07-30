@@ -90,6 +90,7 @@ body {
 .choice {
    
     padding-left:40px;
+    height: 300px;
     
 }
 
@@ -114,6 +115,7 @@ body {
     top:50px;
     right:20px;
     font-size: 20px;
+
 
    
 }
