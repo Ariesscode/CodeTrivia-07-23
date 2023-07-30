@@ -6,12 +6,10 @@ var showQuestions = document.querySelector('.rules');
 
     var quiz = [
             { Question: "The condition in an if/else statement is enclosed with ____",
-              Choices: [
-                { text: "quotes", correct: false},
-                { text: "curly brackets", correct: false},
-                { text: "paranthesis", correct: true},
-                { text: "square brackets", correct: false},
-              ]
+              Choices: ["quotes", "curly brackets", "paranthesis", "square brackets"],
+              Answer: "paranthesis"
+             
+              
 
             },
 
@@ -84,27 +82,26 @@ function renderQuestions() {
        var bttn = document.createElement("button");
       bttn.innerHTML = quiz[questionIndex].Choices[i];
       showChoices.appendChild(bttn);
-      /*
-      bttn.style.width = "250px";
-      bttn.style.backgroundColor = "white";
-      bttn.style.fontWeight = "bold";
-      bttn.style.borderRadius = "4px";
-      bttn.style.cursor = "pointer";
-      bttn.style.display = "block";
-      bttn.style.margin = "5px";
-      bttn.style.marginTop = "10px";
-      bttn.style.paddingTop = "5px";
-      bttn.style.paddingBottom = "5px";
-      bttn.style.position = "relative";
-      bttn.style.top = "50px";
-      bttn.style.right = "20px";
-      */
       bttn.classList.add('custom-button');
-      
-    }
 
-  }
+      if(quiz[questionIndex].Answer.selected = quiz[questionIndex].Answer) {
+        alert("good job!");
+      }
+      bttn.addEventListener('click', selectAnswer)
+      
+      
+ }
+
+
+ }
+
+function selectAnswer(e) {
+  var selectdBttn = e.target;
+
+}
  
+
+
 strtbutton.addEventListener('click', ()=>{
 quizQuestions();
 renderQuestions();
