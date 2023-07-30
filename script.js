@@ -60,11 +60,11 @@ var messageEl = document.getElementById("message");
 
 function setTime() {
   var timerInterval = setInterval(function () {
-    timeLeft--;
-    timer.textContent = "Time: " + timeLeft;
+    timeLeft--; //subtract one second = countdown
+    timer.textContent = "Time: " + timeLeft; //concat the Time string with time left interval
     if (timeLeft === 0) {
       clearInterval(timerInterval);
-      timer.style.display = "block";
+      timer.style.display = "block"; //hide on start screen 
       alert("TIMES UP!");
     }
 
@@ -78,13 +78,14 @@ function renderQuestions() {
 
   showChoices.innerHTML = "";
   for (var i = 0; i < quiz[questionIndex].Choices.length; i++) {
+     //for loop for choices to appear as long as quiz questions length
     console.log(choiceIndex[i]);
 
     let bttn = document.createElement("button");
     bttn.textContent = quiz[questionIndex].Choices[i];
     showChoices.appendChild(bttn);
     bttn.classList.add('custom-button');
-    // I want the new buttons created to show in html
+    // I want the new buttons created to show in game screen
   }
 
 
@@ -95,36 +96,27 @@ document.addEventListener("click", (e) => {
   if (e.target && e.target.matches(".custom-button")) {
     userAnswer = e.target.textContent;
 
-    if (userAnswer === correctAnswer) {
+    if (userAnswer === correctAnswer) { //message will appear to user if selected wrong or correct answer
       messageEl.innerText = "good job!";
-
-
-
-    }
+  }
 
     else {
       messageEl.innerText = "Wrong!";
-      timeLeft -= 10;
+      timeLeft -= 10;//time is subtracted by 10 seconds if selected wrong answer
     }
     questionIndex++;
-    renderQuestions();
+    renderQuestions(); //if conditions are true, questions will render and go up one question or to the next question
   }
 
 })
 
-
-
-
-
-
-
 strtbutton.addEventListener('click', () => {
-  questText.style.display = "none";
+  questText.style.display = "none"; //hide rules and start button once start button is clicked
   strtbutton.style.display = "none";
   timer.style.display = "block"
   console.log(showQuestions);
-  setTime();
-  renderQuestions();
+  setTime(); //timer will start counting down from 60
+  renderQuestions(); //questions and choices appear on screen 
 })
 
 
