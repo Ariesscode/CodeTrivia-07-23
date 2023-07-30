@@ -93,8 +93,8 @@ function renderQuestions() {
 
 document.addEventListener("click", (e) => {
   e.preventDefault()
-  if (e.target && e.target.matches(".custom-button")) {
-    userAnswer = e.target.textContent;
+  if (e.target && e.target.matches(".custom-button")) { // this will match any event target to corresponding element 
+    userAnswer = e.target.textContent; //the inner text of the buttons created should match the inner text of answer in array created
 
     if (userAnswer === correctAnswer) { //message will appear to user if selected wrong or correct answer
       messageEl.innerText = "good job!";
@@ -105,7 +105,7 @@ document.addEventListener("click", (e) => {
       timeLeft -= 10;//time is subtracted by 10 seconds if selected wrong answer
     }
     questionIndex++;
-    renderQuestions(); //if conditions are true, questions will render and go up one question or to the next question
+    renderQuestions(); //if all conditions are true, questions will render and go up one question or to the next question
   }
 
 })
