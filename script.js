@@ -105,34 +105,34 @@ function playerHighScores() {
   hScore.appendChild(submitHighScore);
   submitHighScore.classList.add('submit-name');
   submitHighScore.id = "button-id";
-  
-  
-  
+
+
+
 }
 
 function topScores() {
-  
+
   var hghScore = document.createElement("input");
   hghScore.setAttribute("type", "text");
   hghScore.placeholder = "Enter name ";
-  
+
   hScore.appendChild(hghScore);
   hghScore.classList.add('custom-form');
   hghScore.id = "buttons-id";
   hScore.style.display = "block";
   playerHighScores();
-  
+
 }
 
 
 function addName(e) {
 
-var nameList = {
-  Name: document.getElementById("buttons-id").value,
-  Score: score
-}
-highScoreNames.push(nameList);
-console.log(highScoreNames);
+  var nameList = {
+    Name: document.getElementById("buttons-id").value,
+    Score: score
+  }
+  highScoreNames.push(nameList);
+  console.log(highScoreNames);
 
 }
 
@@ -144,7 +144,7 @@ function displayScore() {
   hScore.style.color = "greenyellow";
   hScore.style.paddingTop = "10px";
   topScores();
-  
+
 }
 
 
@@ -152,14 +152,14 @@ function setTime() {
   var timerInterval = setInterval(function () {
     timeLeft--; //subtract one second = countdown
     timer.textContent = "Time: " + timeLeft; //concat the Time string with time left interval
-    if (timeLeft <= 0)  {
+    if (timeLeft <= 0) {
       clearInterval(timerInterval);
       timer.style.display = "none"; //hide on start screen 
       alert("TIMES UP!");
       quitGme.style.display = "none";
       displayScore();
-      
-  }
+
+    }
   }, 1000);
 
 }
@@ -168,10 +168,10 @@ function renderQuestions() {
   showQuestion.textContent = quiz[questionIndex].Question;
   correctAnswer = quiz[questionIndex].Answer
   playerScore.innerHTML = "Score: " + score + " out of 8";
-  
+
   showChoices.innerHTML = "";
   for (var i = 0; i < quiz[questionIndex].Choices.length; i++) {
-     //for loop for choices to appear as long as quiz questions length
+    //for loop for choices to appear as long as quiz questions length
     console.log(choiceIndex[i]);
 
     let bttn = document.createElement("button");
@@ -185,10 +185,10 @@ function renderQuestions() {
 
 document.addEventListener("click", (e) => {
   e.preventDefault()
-  
+
   if (e.target && e.target.matches(".custom-button")) { // this will match any event target to corresponding element 
     userAnswer = e.target.textContent; //the inner text of the buttons created should match the inner text of answer in array created
-     
+
     if (userAnswer === correctAnswer) { //message will appear to user if selected wrong or correct answer
       score++;
       messageEl.innerText = "Correct! Good job";
@@ -199,8 +199,8 @@ document.addEventListener("click", (e) => {
       messageEl.style.width = "500px";
       messageEl.style.paddingTop = "2px";
       messageEl.style.fontWeight = "bolder";
-      
-  }
+
+    }
 
     else {
       messageEl.innerText = "Wrong, Try Again!";
@@ -217,7 +217,7 @@ document.addEventListener("click", (e) => {
 
     questionIndex++;
     renderQuestions(); //if all conditions are true, questions will render and go up one question or to the next question
-    
+
   }
 
 })
@@ -230,18 +230,18 @@ strtbutton.addEventListener('click', () => {
   console.log(showQuestions);
   setTime(); //timer will start counting down from 60
   renderQuestions(); //questions and choices appear on screen 
-  
+
 })
 
 exitGame.addEventListener('click', () => {
-  
-quitGme.style.display = "none";
-timer.style.display = "none";
-playAgain.style.display = "none";
-questText.style.display = "block"; 
-strtbutton.style.display = "block";
-score = 0;
-return renderQuestions(); //not sure how to reset to play again
+
+  quitGme.style.display = "none";
+  timer.style.display = "none";
+  playAgain.style.display = "none";
+  questText.style.display = "block";
+  strtbutton.style.display = "block";
+  score = 0;
+  return renderQuestions(); //not sure how to reset to play again
 
 
 })
@@ -251,11 +251,11 @@ return renderQuestions(); //not sure how to reset to play again
 
 document.addEventListener("click", (e) => {
   e.preventDefault()
-  
+
   if (e.target && e.target.matches(".submit-name")) {
     console.log("i was clicked");
     addName();
-    
+
 
   }
 
