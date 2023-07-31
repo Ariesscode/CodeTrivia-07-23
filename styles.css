@@ -153,3 +153,9 @@ body {
     left:200px;
 }
 
+.submit-name {
+width:70px;
+font-weight:bold;
+border-color:yellowgreen;
+border-radius:4px;
+}

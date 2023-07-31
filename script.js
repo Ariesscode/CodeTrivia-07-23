@@ -97,11 +97,8 @@ function playerHighScores() {
   var submitHighScore = document.createElement("button");
   submitHighScore.innerText = "Add";
   hScore.appendChild(submitHighScore);
-  hScore.classList.add('submitHighScore');
-  submitHighScore.style.width = "70px";
-  submitHighScore.style.fontWeight = "bold";
-  submitHighScore.style.borderColor = "yellowgreen";
-  submitHighScore.style.borderRadius = "4px";
+  submitHighScore.classList.add('submit-name');
+  
   
 }
 
@@ -116,7 +113,6 @@ function topScores() {
   hScore.style.display = "block";
   playerHighScores();
   
-  
 }
 
 function displayScore() {
@@ -124,8 +120,7 @@ function displayScore() {
   hScore.style.fontSize = "20px";
   hScore.style.color = "greenyellow";
   hScore.style.paddingTop = "10px";
-  
- topScores();
+  topScores();
   
 }
 
@@ -139,24 +134,12 @@ function setTime() {
       timer.style.display = "none"; //hide on start screen 
       alert("TIMES UP!");
       quitGme.style.display = "none";
-      
       displayScore();
-      
-      
-      
-      
-
       
   }
   }, 1000);
 
-
-
-  }
-
-
-
-
+}
 
 function renderQuestions() {
   showQuestion.textContent = quiz[questionIndex].Question
@@ -177,16 +160,12 @@ function renderQuestions() {
   }
 }
 
-
-
 document.addEventListener("click", (e) => {
   e.preventDefault()
   
   if (e.target && e.target.matches(".custom-button")) { // this will match any event target to corresponding element 
     userAnswer = e.target.textContent; //the inner text of the buttons created should match the inner text of answer in array created
      
-    
-
     if (userAnswer === correctAnswer) { //message will appear to user if selected wrong or correct answer
       score++;
       messageEl.innerText = "Correct! Good job";
@@ -197,7 +176,6 @@ document.addEventListener("click", (e) => {
       messageEl.style.width = "500px";
       messageEl.style.paddingTop = "2px";
       messageEl.style.fontWeight = "bolder";
-      
       
   }
 
@@ -222,12 +200,6 @@ document.addEventListener("click", (e) => {
 })
 
 
-
-
-
-
-
-
 strtbutton.addEventListener('click', () => {
   questText.style.display = "none"; //hide rules and start button once start button is clicked
   strtbutton.style.display = "none";
@@ -237,8 +209,6 @@ strtbutton.addEventListener('click', () => {
   renderQuestions(); //questions and choices appear on screen 
   
 })
-
-
 
 exitGame.addEventListener('click', () => {
   
