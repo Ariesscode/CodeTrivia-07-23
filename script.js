@@ -162,7 +162,7 @@ function setTime() {
 }
 
 function renderQuestions() {
-  showQuestion.textContent = quiz[questionIndex].Question
+  showQuestion.textContent = quiz[questionIndex].Question;
   correctAnswer = quiz[questionIndex].Answer
   playerScore.innerHTML = "Score: " + score + " out of 8";
   
