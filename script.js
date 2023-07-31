@@ -94,11 +94,25 @@ var highScore = 0;
 var messageEl = document.getElementById("message");
 
 
+function topScores() {
+  
+  var hghScore = document.createElement("input");
+  hghScore.setAttribute("type", "text");
+  hghScore.placeholder = "Enter name ";
+  
+  hScore.appendChild(hghScore);
+  hghScore.classList.add('custom-form');
+  hScore.style.display = "block";
+  
+}
 
 function displayScore() {
-  hScore.textContent = "Thank you for playing CodeTrivia! " + " You Scored: " + score + " out of 8 questions!";
+  hScore.textContent = "Thank you for playing CodeTrivia! " + " You Scored: " + score + " out of 8 questions!" + " Join the High Scores list: ";
   hScore.style.fontSize = "20px";
-  hScore.style.color = "black";
+  hScore.style.color = "greenyellow";
+  hScore.style.paddingTop = "10px";
+  
+ topScores();
   
 }
 
@@ -111,9 +125,11 @@ function setTime() {
       clearInterval(timerInterval);
       timer.style.display = "none"; //hide on start screen 
       alert("TIMES UP!");
-      
       quitGme.style.display = "none";
+      
       displayScore();
+      
+      
       
       
 

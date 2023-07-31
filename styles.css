@@ -128,9 +128,20 @@ body {
 
 .high-score {
     margin-left: 20px;
-    background-color:yellowgreen;
-    width: 400px;
+    
+    background-color black;
+    width: 500px;
     font-weight:bold;
     padding:20px;
     border-radius: 3px;
+    height:300px;
+    display:none;
+}
+.custom-form {
+    padding-left:20px;
+    display:flex;
+    margin-top:10px;
+    height:30px;
+    border-radius: 4px;
+    
 }
