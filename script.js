@@ -93,6 +93,13 @@ var score = 0;
 var highScore = 0;
 var messageEl = document.getElementById("message");
 
+function playerHighScores() {
+  var submitHighScore = document.createElement("button");
+  submitHighScore.innerText = "Add";
+  hScore.appendChild(submitHighScore);
+  hScore.classList.add('submitHighScore');
+  
+}
 
 function topScores() {
   
@@ -103,6 +110,8 @@ function topScores() {
   hScore.appendChild(hghScore);
   hghScore.classList.add('custom-form');
   hScore.style.display = "block";
+  playerHighScores();
+  
   
 }
 

@@ -135,7 +135,7 @@ body {
     padding:20px;
     border-radius: 3px;
     height:300px;
-    display:none;
+    display: none;
 }
 .custom-form {
     padding-left:20px;
@@ -152,3 +152,4 @@ body {
     bottom:30px;
     left:200px;
 }
+
