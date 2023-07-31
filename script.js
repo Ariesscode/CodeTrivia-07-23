@@ -78,24 +78,12 @@ function setTime() {
 }
 
 
-function scorePt () {
-  playerScore.textContent = "Score: " + score + " out of 5";
-  if (userAnswer === correctAnswer) {
-    score++
-  }
-  else {
-    score--
-  }
 
-  if(score === 5) {
-    return score;
-  }
-}
 
 function renderQuestions() {
   showQuestion.textContent = quiz[questionIndex].Question
   correctAnswer = quiz[questionIndex].Answer
-
+  playerScore.innerHTML = "Score: " + score + " out of 5";
   showChoices.innerHTML = "";
   for (var i = 0; i < quiz[questionIndex].Choices.length; i++) {
      //for loop for choices to appear as long as quiz questions length
@@ -106,15 +94,19 @@ function renderQuestions() {
     showChoices.appendChild(bttn);
     bttn.classList.add('custom-button');
     // I want the new buttons created to show in game screen
+
   }
 }
 
 document.addEventListener("click", (e) => {
   e.preventDefault()
+  
   if (e.target && e.target.matches(".custom-button")) { // this will match any event target to corresponding element 
     userAnswer = e.target.textContent; //the inner text of the buttons created should match the inner text of answer in array created
+    
 
     if (userAnswer === correctAnswer) { //message will appear to user if selected wrong or correct answer
+      score++;
       messageEl.innerText = "Correct! Good job";
       messageEl.style.color = "white";
       messageEl.style.paddingLeft = "20px";
@@ -123,6 +115,7 @@ document.addEventListener("click", (e) => {
       messageEl.style.width = "500px";
       messageEl.style.paddingTop = "2px";
       messageEl.style.fontWeight = "bolder";
+      
       
   }
 
@@ -145,6 +138,10 @@ document.addEventListener("click", (e) => {
 
 })
 
+
+
+
+
 strtbutton.addEventListener('click', () => {
   questText.style.display = "none"; //hide rules and start button once start button is clicked
   strtbutton.style.display = "none";
@@ -152,7 +149,7 @@ strtbutton.addEventListener('click', () => {
   console.log(showQuestions);
   setTime(); //timer will start counting down from 60
   renderQuestions(); //questions and choices appear on screen 
-  scorePt();
+  
 })
 
 
