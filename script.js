@@ -139,7 +139,7 @@ function addName(e) {
 
 
 function displayScore() {
-  hScore.textContent = "Thank you for playing CodeTrivia! " + " You Scored: " + score + " out of 8 questions!" + " Join the High Scores list: ";
+  hScore.textContent = "Thank you for playing CodeTrivia! " + " You Scored: " + score + " out of 8 questions!" + " Join the High Scores list: " + " Open console and local storage to see high scores.";
   hScore.style.fontSize = "20px";
   hScore.style.color = "greenyellow";
   hScore.style.paddingTop = "10px";
@@ -235,6 +235,12 @@ strtbutton.addEventListener('click', () => {
 
 exitGame.addEventListener('click', () => {
    location.reload();
+
+
+}, false)
+
+playAgain.addEventListener('click', () => {
+  location.reload();
 
 
 }, false)
