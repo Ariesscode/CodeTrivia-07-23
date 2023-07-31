@@ -92,12 +92,18 @@ var userAnswer = "";
 var score = 0;
 var highScore = 0;
 var messageEl = document.getElementById("message");
+var highScoreNames = [];
+var scoreName = document.getElementById("button-id");
+
+
 
 function playerHighScores() {
   var submitHighScore = document.createElement("button");
   submitHighScore.innerText = "Add";
   hScore.appendChild(submitHighScore);
   submitHighScore.classList.add('submit-name');
+  submitHighScore.id = "button-id";
+  
   
   
 }
@@ -110,10 +116,24 @@ function topScores() {
   
   hScore.appendChild(hghScore);
   hghScore.classList.add('custom-form');
+  hghScore.id = "buttons-id";
   hScore.style.display = "block";
   playerHighScores();
   
 }
+
+
+function addName(e) {
+
+var nameList = {
+  Name: document.getElementById("buttons-id").value,
+  Score: score
+}
+highScoreNames.push(nameList);
+console.log(highScoreNames);
+}
+
+
 
 function displayScore() {
   hScore.textContent = "Thank you for playing CodeTrivia! " + " You Scored: " + score + " out of 8 questions!" + " Join the High Scores list: ";
@@ -226,10 +246,15 @@ return renderQuestions(); //not sure how to reset to play again
 
 
 
+document.addEventListener("click", (e) => {
+  e.preventDefault()
+  
+  if (e.target && e.target.matches(".submit-name")) {
+    console.log("i was clicked");
+    addName();
+  }
 
-
-
-
+})
 
 
 
