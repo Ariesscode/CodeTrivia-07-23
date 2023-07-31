@@ -36,7 +36,38 @@ var quiz = [
     Answer: "alerts"
 
 
+  },
+
+  {
+    Question: "What is three ways to declare a variable?",
+    Choices: ["let,var,const", "this,return,var", "var,let,if", "const,equal,let"],
+    Answer: "let,var,const"
+
+  },
+
+  {
+    Question: "which 3 values are falsy?",
+    Choices: ["undefined,true,-1", "0,!==,false", "undefined,0,null", "null,0,no"],
+    Answer: "undefined,0,null"
+
+  },
+
+  {
+    Question: "what are the steps to push your local work to the remote branch?",
+    Choices: ["git clone, git push, git fetch--hard, git push", " git add -A, git commit -m, git status,git push", "git push, git checkout main, cd bootcamp, git pull", "git add, git checkout, git push, git pull"],
+    Answer: "git add -A, git commit -m, git status, git push"
+
+  },
+
+
+  {
+    Question: "What is three ways to declare a variable?",
+    Choices: ["let,var,const", "this,return,var", "var,let,if", "const,equal,let"],
+    Answer: "let,var,const"
+
   }
+
+
 
 ];
 
@@ -51,7 +82,7 @@ var quitGme = document.getElementById("gameScreen");
 var playAgain = document.getElementById("restart");
 var playerScore = document.getElementById("score");
 let timeLeft = 60
-var questionLength = 5;
+var questionLength = 8;
 var questionIndex = 0;
 var choiceIndex = 0;
 var choiceLength = 5;
@@ -59,6 +90,7 @@ var correctAnswer = "";
 var userAnswer = "";
 var score = 0;
 var messageEl = document.getElementById("message");
+var gameOverMessage = document.getElementById("game-over");
 
 
 
@@ -67,10 +99,14 @@ function setTime() {
   var timerInterval = setInterval(function () {
     timeLeft--; //subtract one second = countdown
     timer.textContent = "Time: " + timeLeft; //concat the Time string with time left interval
-    if (timeLeft === 0) {
+    if (timeLeft === 0)  {
       clearInterval(timerInterval);
-      timer.style.display = "block"; //hide on start screen 
+      timer.style.display = "none"; //hide on start screen 
       alert("TIMES UP!");
+      showChoices.style.display = "none";
+      quitGme.style.display = "none";
+      
+
     }
 
   }, 1000);
@@ -83,7 +119,7 @@ function setTime() {
 function renderQuestions() {
   showQuestion.textContent = quiz[questionIndex].Question
   correctAnswer = quiz[questionIndex].Answer
-  playerScore.innerHTML = "Score: " + score + " out of 5";
+  playerScore.innerHTML = "Score: " + score + " out of 8";
   showChoices.innerHTML = "";
   for (var i = 0; i < quiz[questionIndex].Choices.length; i++) {
      //for loop for choices to appear as long as quiz questions length
@@ -103,6 +139,7 @@ document.addEventListener("click", (e) => {
   
   if (e.target && e.target.matches(".custom-button")) { // this will match any event target to corresponding element 
     userAnswer = e.target.textContent; //the inner text of the buttons created should match the inner text of answer in array created
+     
     
 
     if (userAnswer === correctAnswer) { //message will appear to user if selected wrong or correct answer
@@ -134,6 +171,7 @@ document.addEventListener("click", (e) => {
 
     questionIndex++;
     renderQuestions(); //if all conditions are true, questions will render and go up one question or to the next question
+    setTime();
   }
 
 })
