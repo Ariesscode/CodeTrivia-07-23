@@ -133,7 +133,7 @@ function addName(e) {
   }
   highScoreNames.push(nameList);
   console.log(highScoreNames);
-
+  localStorage.setItem("HighScores", JSON.stringify(nameList));
 }
 
 
