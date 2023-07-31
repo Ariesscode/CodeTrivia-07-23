@@ -1,12 +1,9 @@
 # 04 Web APIs: Code Quiz
 
-## Your Task
+## Task
 
-At some point in your journey to become a full-stack web developer, you’ll likely be asked to complete a coding assessment&mdash;perhaps as part of an interview process. A typical coding assessment includes both multiple-choice questions and interactive coding challenges. 
-
-To help familiarize you with these tests and allow you to use the skills covered in this module, this Challenge invites you to build a timed coding quiz with multiple-choice questions. This app will run in the browser and will feature dynamically updated HTML and CSS powered by JavaScript code that you write. It will have a clean, polished, and responsive user interface. 
-
-This week’s coursework will equip you with all the skills you need to succeed in this assignment.
+This was my biggest and very first in depth javascript project. I can say this was a bit challenging , but 
+very informative in the process of building this quiz. I used a variety of  functions, event listeners and if statements to add interactivity in this quiz. I wanted this quiz to be a fun experience to the user. This quiz is intended to get users or players to answer as many questions as they can before the clock is out of time. Each time the player answers incorrectly, 10 seconds are subtracted from their time, which they get 60 seconds. Each score is saved in an array that I saved in a variable to keep track of players high scores. As you can see I wasn't able to figure out how to reset my input form, so that the name in the placeholder clears after input.  Only players that input their credentials, will be saved under high score names. one of my biggest challenges was to remember to define objects and variables before using them inside my functions. I think another issue I had was trying to grab elements that were nested inside parent elements. Currently I am still making changes to the quiz and making it more accessible and responsive. I will be adding in a high score link, so that players can click the link and be able to see different players scores. Temporarily, I have players names stored in a variable names "highScoreNames". The user can open the console and declare the variable to see the list of high scores. Security reasons, I would like to learn how to make the quiz more secure, so that not just anyone can enter the console and change variables, code, or scores! Overall, this project has taught me alot of javascript's terminology such as sytax rules, framework, programming, debugging, and how much it brings life to html and css. 
 
 ## User Story
 
@@ -34,66 +31,4 @@ THEN I can save my initials and my score
 
 ## Mock-Up
 
-The following animation demonstrates the application functionality:
-
-![A user clicks through an interactive coding quiz, then enters initials to save the high score before resetting and starting over.](./Assets/04-web-apis-homework-demo.gif)
-
-## Grading Requirements
-
-> **Note**: If a Challenge assignment submission is marked as “0”, it is considered incomplete and will not count towards your graduation requirements. Examples of incomplete submissions include the following:
->
-> * A repository that has no code
->
-> * A repository that includes a unique name but nothing else
->
-> * A repository that includes only a README file but nothing else
->
-> * A repository that only includes starter code
-
-This Challenge is graded based on the following criteria: 
-
-### Technical Acceptance Criteria: 40%
-
-* Satisfies all of the preceding acceptance criteria.
-
-### Deployment: 32%
-
-* Application deployed at live URL.
-
-* Application loads with no errors.
-
-* Application GitHub URL submitted.
-
-* GitHub repository contains application code.
-
-### Application Quality: 15%
-
-* Application user experience is intuitive and easy to navigate.
-
-* Application user interface style is clean and polished.
-
-* Application resembles the mock-up functionality provided in the Challenge instructions.
-
-### Repository Quality: 13%
-
-* Repository has a unique name.
-
-* Repository follows best practices for file structure and naming conventions.
-
-* Repository follows best practices for class/id naming conventions, indentation, quality comments, etc.
-
-* Repository contains multiple descriptive commit messages.
-
-* Repository contains quality readme file with description, screenshot, and link to deployed application.
-
-## Review
-
-You are required to submit BOTH of the following for review:
-
-* The URL of the functional, deployed application.
-
-* The URL of the GitHub repository, with a unique name and a readme describing the project.
-
----
-
-© 2023 edX Boot Camps LLC. Confidential and Proprietary. All Rights Reserved.
+![Alt text](Assets/04-web-apis-homework-demo.gif)

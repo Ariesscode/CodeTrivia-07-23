@@ -4,6 +4,7 @@ var showQuestions = document.querySelector('.rules');
 
 
 
+
 var quiz = [
   {
     Question: "The condition in an if/else statement is enclosed with ____",
@@ -82,6 +83,7 @@ var quitGme = document.getElementById("gameScreen");
 var playAgain = document.getElementById("restart");
 var hScore = document.getElementById("highscore");
 var playerScore = document.getElementById("score");
+var form = document.getElementById("button-id");
 let timeLeft = 60
 var questionLength = 8;
 var questionIndex = 0;
@@ -131,6 +133,7 @@ var nameList = {
 }
 highScoreNames.push(nameList);
 console.log(highScoreNames);
+
 }
 
 
@@ -252,6 +255,8 @@ document.addEventListener("click", (e) => {
   if (e.target && e.target.matches(".submit-name")) {
     console.log("i was clicked");
     addName();
+    
+
   }
 
 })
