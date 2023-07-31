@@ -234,21 +234,10 @@ strtbutton.addEventListener('click', () => {
 })
 
 exitGame.addEventListener('click', () => {
-
-  quitGme.style.display = "none";
-  timer.style.display = "none";
-  playAgain.style.display = "none"; //when user exits game they will be sent back to start screen 
-  questText.style.display = "block";
-  strtbutton.style.display = "block";
-  score = 0;
-  hScore.style.display = "none";
-  playerScore.style.display = "none";
+   location.reload();
 
 
-  return renderQuestions(); //not sure how to reset to play again
-
-
-})
+}, false)
 
 
 
