@@ -105,7 +105,7 @@ function playerHighScores() {
   hScore.appendChild(submitHighScore);
   submitHighScore.classList.add('submit-name');
   submitHighScore.id = "button-id";
-
+//added a button to click after user writes their name in input
 
 
 }
@@ -113,11 +113,11 @@ function playerHighScores() {
 function topScores() {
 
   var hghScore = document.createElement("input");
-  hghScore.setAttribute("type", "text");
+  hghScore.setAttribute("type", "text"); //input for user name or player name 
   hghScore.placeholder = "Enter name ";
 
   hScore.appendChild(hghScore);
-  hghScore.classList.add('custom-form');
+  hghScore.classList.add('custom-form'); 
   hghScore.id = "buttons-id";
   hScore.style.display = "block";
   playerHighScores();
@@ -128,12 +128,12 @@ function topScores() {
 function addName(e) {
 
   var nameList = {
-    Name: document.getElementById("buttons-id").value,
+    Name: document.getElementById("buttons-id").value, // made an array of properties I would like to be stored
     Score: score
   }
   highScoreNames.push(nameList);
-  console.log(highScoreNames);
-  localStorage.setItem("HighScores", JSON.stringify(nameList));
+  console.log(highScoreNames); //I will be able to what was inputted in input
+  localStorage.setItem("HighScores", JSON.stringify(nameList)); // store user name and score into local storage
 }
 
 
@@ -167,7 +167,7 @@ function setTime() {
 function renderQuestions() {
   showQuestion.textContent = quiz[questionIndex].Question;
   correctAnswer = quiz[questionIndex].Answer
-  playerScore.innerHTML = "Score: " + score + " out of 8";
+  playerScore.innerHTML = "Score: " + score + " out of 8"; //score will be stored here , it will add a point everytime plyer gets correct answer
 
   showChoices.innerHTML = "";
   for (var i = 0; i < quiz[questionIndex].Choices.length; i++) {
@@ -203,11 +203,11 @@ document.addEventListener("click", (e) => {
     }
 
     else {
-      messageEl.innerText = "Wrong, Try Again!";
+      messageEl.innerText = "Wrong, Try Again!"; //if user enter wrong answer, a message will pop up
 
       messageEl.style.color = "white";
       messageEl.style.paddingLeft = "20px";
-      messageEl.style.backgroundColor = "red";
+      messageEl.style.backgroundColor = "red"; //added styles to the message pop up
       messageEl.style.height = "30px";
       messageEl.style.width = "500px";
       messageEl.style.paddingTop = "2px";
@@ -226,7 +226,7 @@ document.addEventListener("click", (e) => {
 strtbutton.addEventListener('click', () => {
   questText.style.display = "none"; //hide rules and start button once start button is clicked
   strtbutton.style.display = "none";
-  timer.style.display = "block"
+  timer.style.display = "block" 
   console.log(showQuestions);
   setTime(); //timer will start counting down from 60
   renderQuestions(); //questions and choices appear on screen 
@@ -237,10 +237,14 @@ exitGame.addEventListener('click', () => {
 
   quitGme.style.display = "none";
   timer.style.display = "none";
-  playAgain.style.display = "none";
+  playAgain.style.display = "none"; //when user exits game they will be sent back to start screen 
   questText.style.display = "block";
   strtbutton.style.display = "block";
   score = 0;
+  hScore.style.display = "none";
+  playerScore.style.display = "none";
+
+
   return renderQuestions(); //not sure how to reset to play again
 
 
