@@ -46,6 +46,10 @@ var questionContainer = document.getElementById("ruless")
 var showQuestion = document.getElementById("questions");
 var timer = document.getElementById("time");
 var showChoices = document.getElementById("choices");
+var exitGame = document.getElementById("exit");
+var quitGme = document.getElementById("gameScreen");
+var playAgain = document.getElementById("restart");
+var playerScore = document.getElementById("score");
 let timeLeft = 60
 var questionLength = 5;
 var questionIndex = 0;
@@ -53,6 +57,7 @@ var choiceIndex = 0;
 var choiceLength = 5;
 var correctAnswer = "";
 var userAnswer = "";
+var score = 0;
 var messageEl = document.getElementById("message");
 
 
@@ -72,6 +77,21 @@ function setTime() {
 
 }
 
+
+function scorePt () {
+  playerScore.textContent = "Score: " + score + " out of 5";
+  if (userAnswer === correctAnswer) {
+    score++
+  }
+  else {
+    score--
+  }
+
+  if(score === 5) {
+    return score;
+  }
+}
+
 function renderQuestions() {
   showQuestion.textContent = quiz[questionIndex].Question
   correctAnswer = quiz[questionIndex].Answer
@@ -87,8 +107,6 @@ function renderQuestions() {
     bttn.classList.add('custom-button');
     // I want the new buttons created to show in game screen
   }
-
-
 }
 
 document.addEventListener("click", (e) => {
@@ -100,7 +118,7 @@ document.addEventListener("click", (e) => {
       messageEl.innerText = "Correct! Good job";
       messageEl.style.color = "white";
       messageEl.style.paddingLeft = "20px";
-      messageEl.style.backgroundColor = "green";
+      messageEl.style.backgroundColor = "green"; //added style to each message prompt to show different color
       messageEl.style.height = "30px";
       messageEl.style.width = "500px";
       messageEl.style.paddingTop = "2px";
@@ -110,6 +128,7 @@ document.addEventListener("click", (e) => {
 
     else {
       messageEl.innerText = "Wrong, Try Again!";
+
       messageEl.style.color = "white";
       messageEl.style.paddingLeft = "20px";
       messageEl.style.backgroundColor = "red";
@@ -119,6 +138,7 @@ document.addEventListener("click", (e) => {
       messageEl.style.fontWeight = "bold";
       timeLeft -= 10;//time is subtracted by 10 seconds if selected wrong answer
     }
+
     questionIndex++;
     renderQuestions(); //if all conditions are true, questions will render and go up one question or to the next question
   }
@@ -132,11 +152,22 @@ strtbutton.addEventListener('click', () => {
   console.log(showQuestions);
   setTime(); //timer will start counting down from 60
   renderQuestions(); //questions and choices appear on screen 
+  scorePt();
 })
 
 
 
+exitGame.addEventListener('click', () => {
+  
+quitGme.style.display = "none";
+timer.style.display = "none";
+playAgain.style.display = "none";
+questText.style.display = "block"; 
+strtbutton.style.display = "block";
+return renderQuestions(); //not sure how to reset to play again
 
+
+})
 
 
 
