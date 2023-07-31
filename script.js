@@ -98,6 +98,10 @@ function playerHighScores() {
   submitHighScore.innerText = "Add";
   hScore.appendChild(submitHighScore);
   hScore.classList.add('submitHighScore');
+  submitHighScore.style.width = "70px";
+  submitHighScore.style.fontWeight = "bold";
+  submitHighScore.style.borderColor = "yellowgreen";
+  submitHighScore.style.borderRadius = "4px";
   
 }
 
