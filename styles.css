@@ -125,3 +125,12 @@ body {
     background-color:greenyellow
     
 }
+
+.high-score {
+    margin-left: 20px;
+    background-color:yellowgreen;
+    width: 400px;
+    font-weight:bold;
+    padding:20px;
+    border-radius: 3px;
+}

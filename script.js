@@ -80,6 +80,7 @@ var showChoices = document.getElementById("choices");
 var exitGame = document.getElementById("exit");
 var quitGme = document.getElementById("gameScreen");
 var playAgain = document.getElementById("restart");
+var hScore = document.getElementById("highscore");
 var playerScore = document.getElementById("score");
 let timeLeft = 60
 var questionLength = 8;
@@ -89,29 +90,41 @@ var choiceLength = 5;
 var correctAnswer = "";
 var userAnswer = "";
 var score = 0;
+var highScore = 0;
 var messageEl = document.getElementById("message");
-var gameOverMessage = document.getElementById("game-over");
 
 
+
+function displayScore() {
+  hScore.textContent = "Thank you for playing CodeTrivia! " + " You Scored: " + score + " out of 8 questions!";
+  hScore.style.fontSize = "20px";
+  hScore.style.color = "black";
+  
+}
 
 
 function setTime() {
   var timerInterval = setInterval(function () {
     timeLeft--; //subtract one second = countdown
     timer.textContent = "Time: " + timeLeft; //concat the Time string with time left interval
-    if (timeLeft === 0)  {
+    if (timeLeft <= 0)  {
       clearInterval(timerInterval);
       timer.style.display = "none"; //hide on start screen 
       alert("TIMES UP!");
-      showChoices.style.display = "none";
+      
       quitGme.style.display = "none";
+      displayScore();
+      
       
 
-    }
-
+      
+  }
   }, 1000);
 
-}
+
+
+  }
+
 
 
 
@@ -120,6 +133,7 @@ function renderQuestions() {
   showQuestion.textContent = quiz[questionIndex].Question
   correctAnswer = quiz[questionIndex].Answer
   playerScore.innerHTML = "Score: " + score + " out of 8";
+  
   showChoices.innerHTML = "";
   for (var i = 0; i < quiz[questionIndex].Choices.length; i++) {
      //for loop for choices to appear as long as quiz questions length
@@ -133,6 +147,8 @@ function renderQuestions() {
 
   }
 }
+
+
 
 document.addEventListener("click", (e) => {
   e.preventDefault()
@@ -171,10 +187,13 @@ document.addEventListener("click", (e) => {
 
     questionIndex++;
     renderQuestions(); //if all conditions are true, questions will render and go up one question or to the next question
-    setTime();
+    
   }
 
 })
+
+
+
 
 
 
@@ -199,6 +218,7 @@ timer.style.display = "none";
 playAgain.style.display = "none";
 questText.style.display = "block"; 
 strtbutton.style.display = "block";
+score = 0;
 return renderQuestions(); //not sure how to reset to play again
 
 
