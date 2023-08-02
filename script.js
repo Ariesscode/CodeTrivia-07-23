@@ -139,7 +139,7 @@ function addName(e) {
 
 
 function displayScore() {
-  hScore.textContent = "Thank you for playing CodeTrivia! " + " You Scored: " + score + " out of 8 questions!" + " Join the High Scores list: " + " Open console and local storage to see high scores.";
+  hScore.textContent = "Thank you for playing CodeTrivia! " + " You Scored: " + score + " out of 8 questions!" + " Join the High Scores list: open local storage to see names:";
   hScore.style.fontSize = "20px";
   hScore.style.color = "greenyellow";
   hScore.style.paddingTop = "10px";
@@ -239,8 +239,14 @@ exitGame.addEventListener('click', () => {
 
 }, false)
 
-playAgain.addEventListener('click', () => {
+exitGame.addEventListener('click', () => {
   location.reload();
+
+
+}, false)
+
+playAgain.addEventListener('click', () => {
+  location.reload(); // I had it added before if check commits, I guess I didnt push it to github
 
 
 }, false)
